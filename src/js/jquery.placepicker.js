@@ -104,6 +104,7 @@
             setPlace(place, false);
           } else {
             // alert("No results found");
+            // TODO ishan 2018-12-24 Add support for LatLng if there are no results with exactly the same lat and lng
           }
         } else {
           // alert("Geocoder failed due to: " + status);
@@ -253,6 +254,22 @@
         }
       });
 
+      // Setting Lat,Lng specifically
+      $(element).on("keyup", function(e) {
+        var query = e.target.value;
+        // Check format for lat,lng ex: 22.055096,14.885534
+        var queryParts = query.split(',');
+        if (queryParts.length === 2) {
+          var lat = queryParts[0];
+          var lng = queryParts[1];
+          var isLat = isFinite(lat) && Math.abs(lat) <= 90;
+          var isLng = isFinite(lng) && Math.abs(lng) <= 180;
+          if (isLat && isLng) {
+            var pos = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+            updatePosition(pos);
+          }
+        }
+      });
     }
 
     function setPlace(place, updateMap) {
