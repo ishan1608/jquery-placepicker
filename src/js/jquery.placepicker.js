@@ -258,7 +258,7 @@
       $(element).on("keyup", function(e) {
         var query = e.target.value;
         // Check format for lat,lng ex: 22.055096,14.885534
-        var queryParts = query.split(',');
+        var queryParts = query.split(",");
         if (queryParts.length === 2) {
           var lat = queryParts[0];
           var lng = queryParts[1];
