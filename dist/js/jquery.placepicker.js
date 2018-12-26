@@ -268,6 +268,7 @@
           if (isLat && isLng) {
             var pos = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
             updatePosition(pos);
+            _place = null;
             _latLng = pos;
           }
         }
