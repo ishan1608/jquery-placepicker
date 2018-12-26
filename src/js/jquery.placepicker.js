@@ -101,10 +101,11 @@
         if (status === google.maps.GeocoderStatus.OK) {
           if (results[0]) {
             var place = results[0];
+            // TODO ishan 2018-12-26 Add support for LatLng if there are no results with exactly the same lat and lng
             setPlace(place, false);
           } else {
             // alert("No results found");
-            // TODO ishan 2018-12-24 Add support for LatLng if there are no results with exactly the same lat and lng
+            // TODO ishan 2018-12-26 Add support for LatLng as there are no results matching the queried latlng
           }
         } else {
           // alert("Geocoder failed due to: " + status);
