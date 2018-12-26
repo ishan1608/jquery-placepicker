@@ -1,7 +1,7 @@
 {
   "name": "jquery-placepicker",
   "description": "A simple placepicker component for the google-maps api.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": [
     "placepicker",
     "jquery-plugin",
